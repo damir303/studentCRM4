@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Co±mpatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style TYPE="text/css">
+        .scrollingBox {
+            border: 1px solid black;
+            height: 98vh;
+            overflow-y: scroll;
+        }
+        .selectedRow {
+            background-color: red;
+        }
+
+        table {
+            margin: 0 auto;
+            border: 1px solid black;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        td {
+            vertical-align: top;
+            font-size: 14px;
+        }
+        th {
+            font-size: 14px;
+            border-bottom: 1px solid black;
+            text-align: left;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="scrollingBox">
+        <table width="100%" >
+            <tr>
+                <th colspan="2">Товар</th>
+                <th width="30">Кол</th>
+                <th width="40">Вес</th>
+                <th width="40">№ ящ</th>
+            </tr>
+            <tr onclick="drawThis(0)" id=0>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1041</font></td>
+            </tr>
+            <tr onclick="drawThis(1)" id=1>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1040</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1039</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1037</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1036</font></td>
+            </tr>
+            <tr background-color="red">
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1003</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1024</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1005</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1004</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1002</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1001</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1074</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1072</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1040</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1039</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1037</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1036</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1003</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1024</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1005</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1004</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1002</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1001</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1074</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1072</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1040</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1039</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1037</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1036</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1003</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1024</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1005</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1004</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1002</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1001</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1074</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1072</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1040</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1039</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1037</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1036</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1003</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1024</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1005</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1004</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1002</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1001</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1074</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1072</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1040</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1039</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1037</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1036</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1003</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1024</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1005</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1004</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1002</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1001</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1074</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1072</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1040</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1039</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1037</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1036</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5144</font></td>
+                <td><font size="-2px">Плавленый сыр с грибами 50% жир. ТМ РВ (ванночка 380г)</font></td>
+                <td> <font size="-2px" color="blue">6</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">2,28</font></td>
+                <td> <font size="-2px" color="blue">1003</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1024</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1005</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1004</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1002</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1001</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1074</font></td>
+            </tr>
+            <tr>
+                <td><font text-align="left" size="-5px">5027</font></td>
+                <td><font size="-2px">Плавленый сыр "Сливочный" 50% жир ТМ ПЕ (ванночка 180г)</font></td>
+                <td> <font size="-2px" color="blue">3</font></td>
+                <td> <font text-align="center" size="-2px" color="blue">0,54</font></td>
+                <td> <font size="-2px" color="blue">1072</font></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
