@@ -82,7 +82,7 @@
 
 
 <footer>
-    Created by Rushan Mukharlyamov &copy 2022
+    Created by Mukhametov Damir &copy 2022
 </footer>
 </body>
 </html>
